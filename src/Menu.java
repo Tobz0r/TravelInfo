@@ -9,7 +9,7 @@ import java.io.UnsupportedEncodingException;
 /**
  * Menuclass for the gui
  * @author Tobias Estefors
- * @version 2016-01-14
+ * @version 2016-02-07
  */
 public class Menu {
 
@@ -60,9 +60,10 @@ public class Menu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    long interval = Integer.parseInt(JOptionPane.showInputDialog("" +
-                            "Enter new interval in half-hours"));
-                    if(interval!=JOptionPane.CANCEL_OPTION) {
+                    String tempInterval=JOptionPane.showInputDialog("" +
+                            "Enter new interval in half-hours");
+                    if(tempInterval!=null) {
+                        long interval=(long)Integer.parseInt(tempInterval);
                         interval *= halfHour;
                         if (interval < halfHour) {
                             JOptionPane.showMessageDialog(null,

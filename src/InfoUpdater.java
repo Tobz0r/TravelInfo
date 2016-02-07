@@ -131,10 +131,9 @@ public class InfoUpdater extends Observable implements Runnable {
             JOptionPane.showMessageDialog(null, "Reason: " + e.getLocalizedMessage() +
                                           "\n" + "Try again by refreshing");
             return false;
-        } catch (MalformedURLException e) {
-            JOptionPane.showMessageDialog(null, e.getLocalizedMessage());
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, e.getLocalizedMessage());
+            return false;
         }
         return true;
     }

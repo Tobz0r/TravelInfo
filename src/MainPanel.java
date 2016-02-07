@@ -182,7 +182,8 @@ public class MainPanel extends JPanel implements Observer {
     private Image resizeImage(Image myImg, int w, int h){
         BufferedImage resizeImg = new BufferedImage(w,h,BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = resizeImg.createGraphics();
-        g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+        g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
+                           RenderingHints.VALUE_INTERPOLATION_BILINEAR);
         g.drawImage(myImg,0,0,w,h,null);
         g.dispose();
 
